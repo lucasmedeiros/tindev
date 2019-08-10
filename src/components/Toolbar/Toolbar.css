@@ -45,3 +45,15 @@
 .toolbar-items a:active {
   background-color: #444;
 }
+
+@media (max-width: 768px) {
+  .toolbar-items {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .toolbar-toggle-button {
+    display: none;
+  }
+}

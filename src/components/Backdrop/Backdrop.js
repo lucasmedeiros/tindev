@@ -1,9 +1,13 @@
 import React from 'react';
 import './Backdrop.css';
 
-function Backdrop(props) {
+function Backdrop({ click, shown }) {
+  let classes = (shown) ? ['backdrop', 'open'] : ['drawer'];
+
   return(
-    <div className="backdrop">
+    <div
+      className={classes.join(' ')}
+      onClick={click} >
     </div>
   );
 }

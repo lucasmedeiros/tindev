@@ -9,6 +9,7 @@ import './Main.css';
 
 function Main({ match }) {
   const [users, setUsers] = useState([]);
+  const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 
   const loadUsers = async () => {
     const response = await api.get('/devs', {
@@ -46,14 +47,20 @@ function Main({ match }) {
   };
 
   const handleDrawerToggleClick = () => {
+    setSideDrawerOpen(!sideDrawerOpen);
+  };
 
+  const handleBackdropClick = () => {
+    setSideDrawerOpen(false);
   };
 
   return(
     <main>
-      <Toolbar />
-      <SideDrawer />
-      <Backdrop />
+      <Toolbar drawerClickHandler={handleDrawerToggleClick} />
+      <SideDrawer shown={sideDrawerOpen} />
+      <Backdrop 
+        shown={sideDrawerOpen}
+        click={handleBackdropClick} />
       <section className="main-container">
         {
           users.length > 0 ? (
