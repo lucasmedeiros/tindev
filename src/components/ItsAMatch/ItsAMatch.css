@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Beth+Ellen&display=swap');
+
+.match-container {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.match-container strong {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.match-container button {
+  border: none;
+  background: none;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  margin-top: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.match-title {
+  font-size: 50px;
+  font-family: 'Beth Ellen', cursive;
+  font-weight: bold;
+}
+
+.match-image img {
+  max-height: 250px;
+  border-radius: 50%;
+  border: 4px solid #FFF;
+}
+
+.match-bio {
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 30px;
+  max-width: 400px;
+  color: rgba(255, 255, 255, 0.8);
+}

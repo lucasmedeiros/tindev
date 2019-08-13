@@ -37,6 +37,12 @@
   color: #333;
 }
 
+.main-container ul li footer strong span {
+  font-size: 12px;
+  margin-left: 5px;
+  color: #aaa;
+}
+
 .main-container ul li footer p {
   font-size: 14px;
   line-height: 20px;

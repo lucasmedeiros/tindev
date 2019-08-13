@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import io from 'socket.io-client';
 import Toolbar from '../components/Toolbar/Toolbar';
 import SideDrawer from '../components/SideDrawer/SideDrawer';
 import Backdrop from '../components/Backdrop/Backdrop';
@@ -6,10 +7,12 @@ import dislike from '../assets/dislike.svg';
 import like from '../assets/like.svg';
 import api from '../services/api';
 import './Main.css';
+import ItsAMatch from '../components/ItsAMatch/ItsAMatch';
 
 function Main({ match }) {
   const [users, setUsers] = useState([]);
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
+  const [matchDev, setMatchDev] = useState(null);
 
   const loadUsers = async () => {
     const response = await api.get('/devs', {
@@ -21,6 +24,16 @@ function Main({ match }) {
     setUsers(response.data);
   };
   useEffect(() => {loadUsers()}, [match.params.id]);
+
+  useEffect(() => {
+    const socket = io('http://localhost:3333', {
+      query: { user: match.params.id },
+    });
+
+    socket.on('match', (dev) => {
+      setMatchDev(dev);
+    });
+  }, [match.params.id]);
 
   const removeDeveloperFromList = (developerId) => {
     setUsers(users.filter(user => user._id !== developerId))
@@ -69,7 +82,10 @@ function Main({ match }) {
                 <li key={user._id}>
                   <img src={user.avatar} alt={user.name} />
                   <footer>
-                    <strong>{user.name}</strong>
+                    <strong>
+                      {user.name}
+                      <span>({user.user})</span>
+                    </strong>
                     <p>{user.bio || '---'}</p>
                   </footer>
 
@@ -99,6 +115,11 @@ function Main({ match }) {
             </div>
           )
         }
+        { matchDev && (
+          <ItsAMatch 
+            dismissView={() => setMatchDev(null)}
+            matchDev={matchDev} />
+        )}
       </section>
     </main>
   );
