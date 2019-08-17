@@ -30,6 +30,7 @@ function Login({ history }) {
           onChange={e => setUsername(e.target.value)}
         />
         <button type="submit">Enviar</button>
+        <a href="http://localhost:3333/auth/login">Logar com GITHUB!</a>
       </form>
     </section>
   );
