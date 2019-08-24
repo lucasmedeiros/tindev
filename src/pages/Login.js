@@ -3,7 +3,7 @@ import logo from '../assets/logo.svg';
 import { getFromStorage, ifVal } from '../util/Util';
 import './Login.css';
 
-const TOKEN_STORAGE_KEY = 'main_app_token';
+const USER_ID_STORAGE_KEY = 'user_id';
 
 function Login({ history }) {
   // const [username, setUsername] = useState('');
@@ -23,11 +23,11 @@ function Login({ history }) {
   // }
 
   useLayoutEffect(() => {
-    const token = getFromStorage(TOKEN_STORAGE_KEY);
-    ifVal(token, (nonNullToken) => {
-      history.push(`/auth/${nonNullToken}`);
+    const id = getFromStorage(USER_ID_STORAGE_KEY);
+    ifVal(id, (nonNullId) => {
+      history.push(`/dev/${nonNullId}`);
     });
-  }, []);
+  });
 
   return (
     <section className="login-container">

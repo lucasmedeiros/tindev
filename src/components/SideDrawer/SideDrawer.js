@@ -11,6 +11,9 @@ function SideDrawer({ shown }) {
         <li>
           <Link to="/">Matches</Link>
         </li>
+        <li>
+          <Link to="/">Logout</Link>
+        </li>
       </ul>
     </nav>
   );

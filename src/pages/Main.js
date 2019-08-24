@@ -111,7 +111,7 @@ function Main({ match }) {
             </ul>
           ) : (
             <div className="empty">
-              <p>Não há usuários disponíveis.</p>
+              <p>Não há usuários disponíveis no momento :(</p>
             </div>
           )
         }
