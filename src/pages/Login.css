@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.login-container form {
+.login-container article {
   width: 100%;
   max-width: 350px;
   display: flex;
@@ -26,13 +26,18 @@
   color: #999;
 }
 
-.login-container button {
-  margin-top: 10px;
+.login-container a {
+  margin-top: 20px;
   border: 0;
   border-radius: 4px;
   height: 48px;
-  font-size: 16px;
+  font-size: 1.5em;
   background-color: #DF4723;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
   font-weight: bold;
   color: #FFF;
   cursor: pointer;

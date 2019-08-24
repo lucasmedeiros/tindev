@@ -8,6 +8,7 @@ function Routes() {
     <BrowserRouter>
       <Route path="/" exact component={Login} />
       <Route path="/dev/:id" component={Main} />
+      <Route path="/auth/:accessToken" />
     </BrowserRouter>
   );
 }
