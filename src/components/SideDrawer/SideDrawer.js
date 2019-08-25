@@ -1,20 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './SideDrawer.css';
+import ListItems from '../ListItems/ListItems';
 
 function SideDrawer({ shown }) {
   let classes = (shown) ? ['drawer', 'open'] : ['drawer'];
-
   return(
     <nav className={classes.join(' ')}>
-      <ul>
-        <li>
-          <Link to="/">Matches</Link>
-        </li>
-        <li>
-          <Link to="/">Logout</Link>
-        </li>
-      </ul>
+      <ListItems />
     </nav>
   );
 }

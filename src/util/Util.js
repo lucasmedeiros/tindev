@@ -32,4 +32,22 @@ const setInStorage = (key, object) => {
   });
 };
 
-export { ifVal, getFromStorage, setInStorage };
+/**
+ * Remove um objeto "chave-valor" do localStorage.
+ * 
+ * @param {String} key - chave a ser removida do localStorage.
+ * @returns {String} - null ou a chave que foi removida.
+ */
+const removeFromStorage = (key) => {
+  return ifVal(key, nonNullKey => {
+    localStorage.removeItem(key);
+    return nonNullKey;
+  });
+}
+
+export {
+  ifVal,
+  getFromStorage,
+  setInStorage,
+  removeFromStorage
+};

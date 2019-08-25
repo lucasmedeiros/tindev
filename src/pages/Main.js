@@ -9,21 +9,20 @@ import api from '../services/api';
 import './Main.css';
 import ItsAMatch from '../components/ItsAMatch/ItsAMatch';
 
-function Main({ match }) {
+function Main({ match, history }) {
   const [users, setUsers] = useState([]);
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
   const [matchDev, setMatchDev] = useState(null);
-
-  const loadUsers = async () => {
+  
+  useEffect(() => async () => {
     const response = await api.get('/devs', {
       headers: {
         user: match.params.id,
-      },
+      }
     });
-  
+
     setUsers(response.data);
-  };
-  useEffect(() => {loadUsers()}, [match.params.id]);
+  }, [match.params.id]);
 
   useEffect(() => {
     const socket = io('http://localhost:3333', {
@@ -69,8 +68,10 @@ function Main({ match }) {
 
   return(
     <main>
-      <Toolbar drawerClickHandler={handleDrawerToggleClick} />
-      <SideDrawer shown={sideDrawerOpen} />
+      <Toolbar
+        drawerClickHandler={handleDrawerToggleClick} />
+      <SideDrawer
+        shown={sideDrawerOpen} />
       <Backdrop 
         shown={sideDrawerOpen}
         click={handleBackdropClick} />

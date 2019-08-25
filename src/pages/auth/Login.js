@@ -1,9 +1,9 @@
 import React, { useLayoutEffect } from 'react';
-import logo from '../assets/logo.svg';
-import { getFromStorage, ifVal } from '../util/Util';
+import logo from '../../assets/logo.svg';
+import { getFromStorage, ifVal } from '../../util/Util';
 import './Login.css';
 
-const USER_ID_STORAGE_KEY = 'user_id';
+const USER_STORAGE_KEY = 'tindev_user';
 
 function Login({ history }) {
   // const [username, setUsername] = useState('');
@@ -23,9 +23,10 @@ function Login({ history }) {
   // }
 
   useLayoutEffect(() => {
-    const id = getFromStorage(USER_ID_STORAGE_KEY);
-    ifVal(id, (nonNullId) => {
-      history.push(`/dev/${nonNullId}`);
+    const user = JSON.parse(getFromStorage(USER_STORAGE_KEY));
+    ifVal(user, (nonNullUser) => {
+      const { _id } = nonNullUser;
+      history.push(`/dev/${_id}`);
     });
   });
 

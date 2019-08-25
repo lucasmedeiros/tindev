@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 import logo from '../../assets/logo.svg';
 import './Toolbar.css';
+import ListItems from '../ListItems/ListItems';
 
 function Toolbar({ drawerClickHandler }) {
   
@@ -21,16 +22,8 @@ function Toolbar({ drawerClickHandler }) {
           </Link>
         </div>
         <div className="spacer" />
-        <div className="toolbar-items">
-          <ul>
-            <li>
-              <Link to="/">Matches</Link>
-            </li>
-            <li>
-              <Link to="/">Logout</Link>
-            </li>
-          </ul>
-        </div>
+        <ListItems
+          className='toolbar-items' />
       </nav>
     </header>
   );
