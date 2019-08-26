@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
-// import Toolbar from '../components/Toolbar/Toolbar';
-// import SideDrawer from '../components/SideDrawer/SideDrawer';
-// import Backdrop from '../components/Backdrop/Backdrop';
 import dislike from '../assets/dislike.svg';
 import like from '../assets/like.svg';
 import api from '../services/api';
@@ -13,14 +10,18 @@ function Main({ match }) {
   const [users, setUsers] = useState([]);
   const [matchDev, setMatchDev] = useState(null);
 
-  useEffect(() => async () => {
-    const response = await api.get('/devs', {
-      headers: {
-        user: match.params.id,
-      }
-    });
+  useEffect(() => {
+    const loadUsers = async () => {
+      const response = await api.get('/devs', {
+        headers: {
+          user: match.params.id,
+        }
+      });
+  
+      setUsers(response.data);
+    };
 
-    setUsers(response.data);
+    loadUsers();
   }, [match.params.id]);
 
   useEffect(() => {

@@ -8,11 +8,60 @@
 }
 
 .page-404-header {
-  margin-bottom: 20px;
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
 }
 
 .page-404-header h1 {
-  font-size: 80px;
+  font-size: 140px;
   color: #DF4723;
   font-weight: bold;
+}
+
+.page-404-header h3 {
+  color: #777;
+  font-size: 25px;
+}
+
+.page-404-description {
+  max-width: 700px;
+  line-height: 30px;
+  color: #777;
+  font-size: 18px;
+}
+
+.page-404-description code {
+  font-size: 16px;
+  background-color: #333;
+  padding: 3px 5px;
+  border-radius: 5px;
+  color: yellow;
+}
+
+.go-back {
+  margin-top: 5vh;
+}
+
+.go-back a {
+  color: #DF4723;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.go-back a:active {
+  color: #ff0000
+}
+
+@media (max-width: 800px) {
+  .page-404-container {
+    padding: 10px;
+  }
+
+  .page-404-header {
+    grid-template-columns: 1fr;
+  }
 }
