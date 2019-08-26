@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
-import Toolbar from '../components/Toolbar/Toolbar';
-import SideDrawer from '../components/SideDrawer/SideDrawer';
-import Backdrop from '../components/Backdrop/Backdrop';
+// import Toolbar from '../components/Toolbar/Toolbar';
+// import SideDrawer from '../components/SideDrawer/SideDrawer';
+// import Backdrop from '../components/Backdrop/Backdrop';
 import dislike from '../assets/dislike.svg';
 import like from '../assets/like.svg';
 import api from '../services/api';
 import './Main.css';
 import ItsAMatch from '../components/ItsAMatch/ItsAMatch';
 
-function Main({ match, history }) {
+function Main({ match }) {
   const [users, setUsers] = useState([]);
-  const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
   const [matchDev, setMatchDev] = useState(null);
-  
+
   useEffect(() => async () => {
     const response = await api.get('/devs', {
       headers: {
@@ -58,23 +57,8 @@ function Main({ match, history }) {
     removeDeveloperFromList(id);
   };
 
-  const handleDrawerToggleClick = () => {
-    setSideDrawerOpen(!sideDrawerOpen);
-  };
-
-  const handleBackdropClick = () => {
-    setSideDrawerOpen(false);
-  };
-
   return(
     <main>
-      <Toolbar
-        drawerClickHandler={handleDrawerToggleClick} />
-      <SideDrawer
-        shown={sideDrawerOpen} />
-      <Backdrop 
-        shown={sideDrawerOpen}
-        click={handleBackdropClick} />
       <section className="main-container">
         {
           users.length > 0 ? (
