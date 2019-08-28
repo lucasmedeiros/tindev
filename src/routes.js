@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {HashRouter, Route, Switch} from 'react-router-dom';
 import Login from './pages/auth/Login';
 import Main from './pages/Main';
 import Auth from './pages/auth/Auth';
@@ -11,7 +11,7 @@ import Matches from './pages/matches/Matches';
 
 function Routes() {
   return(
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route path="/" exact component={Login} />
         <Route path="/auth/:accessToken" component={Auth} />
@@ -26,7 +26,7 @@ function Routes() {
           component={Matches} />
         <Route component={Page404} />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
