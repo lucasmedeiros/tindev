@@ -13,15 +13,15 @@ function Routes() {
   return(
     <BrowserRouter>
       <Switch>
-        <Route path="/tindev" exact component={Login} />
-        <Route path="/tindev/auth/:accessToken" component={Auth} />
-        <Route path="/tindev/logout" component={Logout} />
+        <Route path="/" exact component={Login} />
+        <Route path="/auth/:accessToken" component={Auth} />
+        <Route path="/logout" component={Logout} />
         <AppPrivateRouteLayout
-          path="/tindev/dev" exact
+          path="/dev" exact
           layout={MainLayout}
           component={Main} />        
         <AppPrivateRouteLayout
-          path="/tindev/matches" exact
+          path="/matches" exact
           layout={MainLayout}
           component={Matches} />
         <Route component={Page404} />

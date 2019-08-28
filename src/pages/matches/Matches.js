@@ -11,6 +11,7 @@ function Matches() {
 
   useEffect(() => {
     const loadMatches = async () => {
+      console.log(userId);
       const response = await api.get(`devs/${userId}/matches`, {
         headers: {
           user: userId,
@@ -29,7 +30,7 @@ function Matches() {
       {
         loading ? (
           <ClipLoader
-              css={{"margin-top": "100px"}}
+              css={{marginTop: "100px"}}
               sizeUnit={"px"}
               size={40}
               color={'#999'}
@@ -42,7 +43,8 @@ function Matches() {
                 <li key={match._id}>
                   <a
                   href={`https://github.com/${match.user}`}
-                  target="_blank" >
+                  target="_blank"
+                  rel="noopener noreferrer" >
                     <img src={match.avatar} alt={match.name} />
                     <footer>
                       <strong>

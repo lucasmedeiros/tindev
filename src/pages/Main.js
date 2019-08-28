@@ -71,7 +71,7 @@ function Main() {
         {
           loading ? (
             <ClipLoader
-              css={{"margin-top": "100px"}}
+              css={{marginTop: "100px"}}
               sizeUnit={"px"}
               size={40}
               color={'#999'}
