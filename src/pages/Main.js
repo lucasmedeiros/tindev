@@ -5,16 +5,20 @@ import like from '../assets/like.svg';
 import api from '../services/api';
 import './Main.css';
 import ItsAMatch from '../components/ItsAMatch/ItsAMatch';
+import { authService } from '../services/authService';
 
-function Main({ match }) {
+function Main() {
   const [users, setUsers] = useState([]);
   const [matchDev, setMatchDev] = useState(null);
 
+  let userId = authService.currentUserValue._id;
+
   useEffect(() => {
     const loadUsers = async () => {
+      
       const response = await api.get('/devs', {
         headers: {
-          user: match.params.id,
+          user: userId,
         }
       });
   
@@ -22,17 +26,17 @@ function Main({ match }) {
     };
 
     loadUsers();
-  }, [match.params.id]);
+  }, [userId]);
 
   useEffect(() => {
     const socket = io('http://localhost:3333', {
-      query: { user: match.params.id },
+      query: { user: userId },
     });
 
     socket.on('match', (dev) => {
       setMatchDev(dev);
     });
-  }, [match.params.id]);
+  }, [userId]);
 
   const removeDeveloperFromList = (developerId) => {
     setUsers(users.filter(user => user._id !== developerId))
@@ -41,7 +45,7 @@ function Main({ match }) {
   const handleLike = async (id) => {
     await api.post(`devs/${id}/likes`, null, {
       headers: {
-        user: match.params.id,
+        user: userId,
       }
     });
 
@@ -51,7 +55,7 @@ function Main({ match }) {
   const handleDislike = async (id) => {
     await api.post(`devs/${id}/dislikes`, null, {
       headers: {
-        user: match.params.id,
+        user: userId,
       }
     });
 

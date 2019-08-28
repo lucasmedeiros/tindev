@@ -37,7 +37,7 @@
 }
 
 .match-image img {
-  max-height: 250px;
+  max-height: 200px;
   border-radius: 50%;
   border: 4px solid #FFF;
 }

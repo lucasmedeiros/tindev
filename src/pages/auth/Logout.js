@@ -1,12 +1,10 @@
 import React, {useEffect} from 'react';
-import { removeFromStorage } from '../../util/Util';
-
-const USER_STORAGE_KEY = 'tindev_user';
+import { authService } from '../../services/authService';
 
 function Logout({ history }) {
 
   useEffect(() => {
-    removeFromStorage(USER_STORAGE_KEY);
+    authService.logout();
     history.push('/');
   });
 

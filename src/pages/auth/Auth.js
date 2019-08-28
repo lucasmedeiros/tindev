@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import api from '../../services/api';
-import { setInStorage } from '../../util/Util';
-
-const USER_STORAGE_KEY = 'tindev_user';
+import { authService } from '../../services/authService';
 
 function Auth({ history, match }) {
 
@@ -13,12 +11,10 @@ function Auth({ history, match }) {
 
       try {
         const response = await api.post('/devs', data);
-
-        const { _id } = response.data;
-
-        setInStorage(USER_STORAGE_KEY, JSON.stringify(response.data));
-        history.push(`/dev/${_id}`);
+        authService.login(response.data);
+        history.push(`/dev`);
       } catch (err) {
+        console.log(err)
         history.push('/');
       }
     }
