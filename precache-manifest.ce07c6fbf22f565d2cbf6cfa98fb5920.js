@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1f99f011af2616e43a44ec22da23b1f8",
+    "revision": "eb983e77574469e06460c3e8957b24d6",
     "url": "/tindev/index.html"
   },
   {
-    "revision": "83106fd8a488ac8f16a9",
+    "revision": "9929ef173f7f83d4d905",
     "url": "/tindev/static/css/main.df272a35.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tindev/static/js/2.b1e5bcc6.chunk.js"
   },
   {
-    "revision": "83106fd8a488ac8f16a9",
-    "url": "/tindev/static/js/main.8f828997.chunk.js"
+    "revision": "9929ef173f7f83d4d905",
+    "url": "/tindev/static/js/main.322f6ec7.chunk.js"
   },
   {
     "revision": "a326cb66c3d055e27fb1",
