@@ -6,10 +6,10 @@ function ListItems({ className }) {
     <div className={className}>
       <ul>
         <li>
-          <Link to="/matches">Matches</Link>
+          <Link to="/tindev/matches">Matches</Link>
         </li>
         <li>
-          <Link to="/logout">Logout</Link>
+          <Link to="/tindev/logout">Logout</Link>
         </li>
       </ul>
     </div>
