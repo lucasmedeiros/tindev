@@ -1,5 +1,6 @@
 import React from "react";
 import './Page404.css';
+import {Link} from 'react-router-dom';
 
 function Page404({ location }) {
   return(
@@ -16,9 +17,7 @@ function Page404({ location }) {
         Essa página pode ter sido removida, ou nunca ter existido... ¯\_(ツ)_/¯
       </p>
 
-      <div className="go-back">
-        <a href="/">voltar ao início</a>
-      </div>
+      <Link to="/" className="go-back" >Voltar ao início</Link>
     </section>
   );
 }

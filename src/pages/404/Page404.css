@@ -43,16 +43,13 @@
 
 .go-back {
   margin-top: 5vh;
-}
-
-.go-back a {
   color: #DF4723;
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.go-back a:active {
+.go-back:active {
   color: #ff0000
 }
 
