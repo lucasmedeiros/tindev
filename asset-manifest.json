@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/tindev/static/css/main.c94e7c20.chunk.css",
-    "main.js": "/tindev/static/js/main.2e59bb09.chunk.js",
-    "main.js.map": "/tindev/static/js/main.2e59bb09.chunk.js.map",
+    "main.css": "/tindev/static/css/main.bde80237.chunk.css",
+    "main.js": "/tindev/static/js/main.e06d42c9.chunk.js",
+    "main.js.map": "/tindev/static/js/main.e06d42c9.chunk.js.map",
     "runtime~main.js": "/tindev/static/js/runtime~main.9d92bef2.js",
     "runtime~main.js.map": "/tindev/static/js/runtime~main.9d92bef2.js.map",
     "static/js/2.e633fbc4.chunk.js": "/tindev/static/js/2.e633fbc4.chunk.js",
     "static/js/2.e633fbc4.chunk.js.map": "/tindev/static/js/2.e633fbc4.chunk.js.map",
     "index.html": "/tindev/index.html",
-    "precache-manifest.a6c4fb4b9f6ebff9e02d1b15f18e455f.js": "/tindev/precache-manifest.a6c4fb4b9f6ebff9e02d1b15f18e455f.js",
+    "precache-manifest.27304a73a37b05fbeb29eaa717c28bf7.js": "/tindev/precache-manifest.27304a73a37b05fbeb29eaa717c28bf7.js",
     "service-worker.js": "/tindev/service-worker.js",
-    "static/css/main.c94e7c20.chunk.css.map": "/tindev/static/css/main.c94e7c20.chunk.css.map",
+    "static/css/main.bde80237.chunk.css.map": "/tindev/static/css/main.bde80237.chunk.css.map",
     "static/media/dislike.svg": "/tindev/static/media/dislike.d4ec34e8.svg",
     "static/media/like.svg": "/tindev/static/media/like.542059a4.svg",
     "static/media/logo.svg": "/tindev/static/media/logo.6a01ceef.svg"
