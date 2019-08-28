@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b4391b551e6a818c43b17c30ea0ce86b",
+    "revision": "04de4b5d4a1c68004697524fdf2cda67",
     "url": "/tindev/index.html"
   },
   {
-    "revision": "709443a5b5564bc9d7d7",
-    "url": "/tindev/static/css/main.df272a35.chunk.css"
+    "revision": "24fb9ce35370afbf805e",
+    "url": "/tindev/static/css/main.9cfae590.chunk.css"
   },
   {
-    "revision": "e4bba41f35d53857904b",
-    "url": "/tindev/static/js/2.b1e5bcc6.chunk.js"
+    "revision": "a291858c030bc6bbd0cc",
+    "url": "/tindev/static/js/2.e633fbc4.chunk.js"
   },
   {
-    "revision": "709443a5b5564bc9d7d7",
-    "url": "/tindev/static/js/main.08188368.chunk.js"
+    "revision": "24fb9ce35370afbf805e",
+    "url": "/tindev/static/js/main.9f56fa88.chunk.js"
   },
   {
     "revision": "a326cb66c3d055e27fb1",
