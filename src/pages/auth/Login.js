@@ -16,7 +16,7 @@ function Login({ history }) {
     <section className="login-container">
       <article className="login-center">
         <img src={logo} alt="Logo da Tindev"/>
-        <a href="http://localhost:3333/auth/login">Logar com GITHUB!</a>
+        <a href="https://tindev-backend-lucasmedeiros.herokuapp.com/auth/login">Logar com GITHUB!</a>
       </article>
     </section>
   );

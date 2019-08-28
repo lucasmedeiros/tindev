@@ -49,5 +49,5 @@ export {
   ifVal,
   getFromStorage,
   setInStorage,
-  removeFromStorage
+  removeFromStorage,
 };

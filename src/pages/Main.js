@@ -6,12 +6,14 @@ import api from '../services/api';
 import './Main.css';
 import ItsAMatch from '../components/ItsAMatch/ItsAMatch';
 import { authService } from '../services/authService';
+import { ClipLoader } from 'react-spinners'
 
 function Main() {
   const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [matchDev, setMatchDev] = useState(null);
 
-  let userId = authService.currentUserValue._id;
+  const userId = authService.currentUserValue._id;
 
   useEffect(() => {
     const loadUsers = async () => {
@@ -23,13 +25,14 @@ function Main() {
       });
   
       setUsers(response.data);
+      setLoading(false);
     };
 
     loadUsers();
   }, [userId]);
 
   useEffect(() => {
-    const socket = io('http://localhost:3333', {
+    const socket = io('https://tindev-backend-lucasmedeiros.herokuapp.com', {
       query: { user: userId },
     });
 
@@ -66,43 +69,53 @@ function Main() {
     <main>
       <section className="main-container">
         {
-          users.length > 0 ? (
-            <ul>
-              {users.map(user => (
-                <li key={user._id}>
-                  <img src={user.avatar} alt={user.name} />
-                  <footer>
-                    <strong>
-                      {user.name}
-                      <span>({user.user})</span>
-                    </strong>
-                    <p>{user.bio || '---'}</p>
-                  </footer>
-
-                  <div className="buttons">
-                    <button 
-                      type="button"
-                      onClick={() => handleDislike(user._id)} >
-                      <img 
-                        src={dislike} 
-                        alt="Dislike" />
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => handleLike(user._id)} >
-                      <img
-                        src={like}
-                        alt="Like" />
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </ul>
+          loading ? (
+            <ClipLoader
+              css={{"margin-top": "100px"}}
+              sizeUnit={"px"}
+              size={40}
+              color={'#999'}
+              loading={loading}
+            />
           ) : (
-            <div className="empty">
-              <p>Não há usuários disponíveis no momento :(</p>
-            </div>
+            users.length > 0 ? (
+              <ul>
+                {users.map(user => (
+                  <li key={user._id}>
+                    <img src={user.avatar} alt={user.name} />
+                    <footer>
+                      <strong>
+                        {user.name}
+                        <span>({user.user})</span>
+                      </strong>
+                      <p>{user.bio || '---'}</p>
+                    </footer>
+  
+                    <div className="buttons">
+                      <button 
+                        type="button"
+                        onClick={() => handleDislike(user._id)} >
+                        <img 
+                          src={dislike} 
+                          alt="Dislike" />
+                      </button>
+  
+                      <button
+                        type="button"
+                        onClick={() => handleLike(user._id)} >
+                        <img
+                          src={like}
+                          alt="Like" />
+                      </button>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <div className="empty">
+                <p>Não há usuários disponíveis no momento :(</p>
+              </div>
+            )
           )
         }
         { matchDev && (

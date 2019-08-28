@@ -7,6 +7,7 @@ import Logout from './pages/auth/Logout';
 import MainLayout from './layouts/MainLayout';
 import Page404 from './pages/404/Page404';
 import AppPrivateRouteLayout from './layouts/AppPrivateRouteLayout';
+import Matches from './pages/matches/Matches';
 
 function Routes() {
   return(
@@ -18,7 +19,11 @@ function Routes() {
         <AppPrivateRouteLayout
           path="/dev" exact
           layout={MainLayout}
-          component={Main} />
+          component={Main} />        
+        <AppPrivateRouteLayout
+          path="/matches" exact
+          layout={MainLayout}
+          component={Matches} />
         <Route component={Page404} />
       </Switch>
     </BrowserRouter>
