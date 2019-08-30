@@ -38,25 +38,24 @@ function Matches() {
             />
         ) : (
           matches.length > 0 ? (
-            <ul>
+            <article>
               {matches.map(match => (
-                <li key={match._id}>
-                  <a
-                  href={`https://github.com/${match.user}`}
-                  target="_blank"
-                  rel="noopener noreferrer" >
-                    <img src={match.avatar} alt={match.name} />
-                    <footer>
-                      <strong>
-                        {match.name}
-                        <span>({match.user})</span>
-                      </strong>
-                      <p>{match.bio || '---'}</p>
-                    </footer>
-                  </a>
-                </li>
+                <a
+                key={match._id}
+                href={`https://github.com/${match.user}`}
+                target="_blank"
+                rel="noopener noreferrer" >
+                  <img src={match.avatar} alt={match.name} />
+                  <footer>
+                    <strong>
+                      {match.name}
+                      <span>({match.user})</span>
+                    </strong>
+                    <p>{match.bio || '---'}</p>
+                  </footer>
+                </a>
               ))}
-            </ul>
+            </article>
           ) : (
             <div className="empty-matches">
               <p>Ainda não aconteceu nenhum match... :(</p>

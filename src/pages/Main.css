@@ -18,8 +18,9 @@
   flex-direction: column;
 }
 
-.main-container ul li img {
+.main-container ul li .photos {
   max-width: 100%;
+  height: 40vh;
   border-radius: 5px 5px 0 0;
 }
 

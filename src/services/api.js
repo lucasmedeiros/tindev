@@ -1,7 +1,8 @@
 import axios from 'axios';
+import {SERVER_URL} from '../config';
 
 const api = axios.create({
-  baseURL: 'https://tindev-backend-lucasmedeiros.herokuapp.com',
+  baseURL: SERVER_URL,
 });
 
 export default api;

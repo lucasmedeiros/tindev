@@ -6,7 +6,8 @@ import api from '../services/api';
 import './Main.css';
 import ItsAMatch from '../components/ItsAMatch/ItsAMatch';
 import { authService } from '../services/authService';
-import { ClipLoader } from 'react-spinners'
+import { ClipLoader } from 'react-spinners';
+import { SERVER_URL } from '../config';
 
 function Main() {
   const [users, setUsers] = useState([]);
@@ -32,7 +33,7 @@ function Main() {
   }, [userId]);
 
   useEffect(() => {
-    const socket = io('https://tindev-backend-lucasmedeiros.herokuapp.com', {
+    const socket = io(SERVER_URL, {
       query: { user: userId },
     });
 
@@ -82,7 +83,7 @@ function Main() {
               <ul>
                 {users.map(user => (
                   <li key={user._id}>
-                    <img src={user.avatar} alt={user.name} />
+                    <img className="photos" src={user.avatar} alt={user.name} />
                     <footer>
                       <strong>
                         {user.name}
